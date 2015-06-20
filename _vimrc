@@ -29,6 +29,10 @@ set fileencodings=utf-8,gb18030,utf-16,big5
 set fileformats=unix,dos
 set nobackup
 
+" show special characters
+set list
+set listchars=tab:▸\ ,eol:¬
+
 " Set to auto read when a file is changed from the outside
 set autoread
 
@@ -184,5 +188,4 @@ map <leader>ec :botright cope<CR>
 " :cd. change working directory to that of the current file
 cmap cd. lcd %:p:h
 
-" map key to clear search highlight.
 nnoremap <leader><space> :noh<cr>
