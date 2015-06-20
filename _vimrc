@@ -188,6 +188,7 @@ map <leader>ec :botright cope<CR>
 " :cd. change working directory to that of the current file
 cmap cd. lcd %:p:h
 
+" clear search highlighting
 nnoremap <leader><space> :noh<cr>
 
 " strip trailing spaces
