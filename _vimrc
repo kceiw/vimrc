@@ -170,3 +170,6 @@ nmap <leader>tn :tabNex<CR>
 nmap <leader>tp :tabprevious<CR>
 nmap <leader>tf :tabfirst<CR>
 nmap <leader>tl :tablast<CR>
+
+" open the error console
+map <leader>ec :botright cope<CR>
