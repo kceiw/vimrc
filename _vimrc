@@ -173,3 +173,6 @@ nmap <leader>tl :tablast<CR>
 
 " open the error console
 map <leader>ec :botright cope<CR>
+
+" :cd. change working directory to that of the current file
+cmap cd. lcd %:p:h
