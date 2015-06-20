@@ -160,6 +160,9 @@ let g:mapleader = ","
 nmap <F10> :!ctags -R --c-kinds=+cdefgmnstuvx --c++-kinds=+cdefgmnstuvx --fields=+iamS --extra=+q --languages=+c++,c;cscope -bcqR <CR>
 nmap <F12> :cscope add cscope.out<CR>:CCTreeLoadDB cscope.out<CR>
 
+" vertically split the window and move to the new one
+nnoremap <leader>w <C-w>v<C-w>l
+
 " move between windows
 nmap <leader>wj <C-W>j
 nmap <leader>wk <C-W>k
