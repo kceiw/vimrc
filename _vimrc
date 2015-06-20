@@ -7,7 +7,6 @@ set backspace=indent,eol,start
 
 set ff=unix
 
-set backup		" keep a backup file
 set history=50		" keep 50 lines of command line history
 set showcmd		" display incomplete commands
 " do not redraw, when running macros..
