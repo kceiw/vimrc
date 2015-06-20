@@ -74,8 +74,7 @@ set foldcolumn=0
 " wrap and the length of a line
 set wrap
 set linebreak
-set textwidth=78
-" set textwidth
+set textwidth=80
 
 " :source $VIMRUNTIME/ftplugin/man.vim
 
