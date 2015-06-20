@@ -189,3 +189,6 @@ map <leader>ec :botright cope<CR>
 cmap cd. lcd %:p:h
 
 nnoremap <leader><space> :noh<cr>
+
+" strip trailing spaces
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
