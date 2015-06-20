@@ -20,7 +20,6 @@ set nu!                 " display line number
 set enc=utf-8
 set fileencodings=utf-8,gb18030,utf-16,big5
 set fileformats=unix,dos
-" set backupext=.bak
 set nobackup
 
 " Set to auto read when a file is changed from the outside
@@ -69,24 +68,14 @@ set formatoptions=tcrqnocw
 " set foldenable
 set foldmethod=syntax
 set foldcolumn=0
-"nnoremap <space> @=((foldclosed(line('.'))<0)?'zc':'zo')<CR>
 
 " wrap and the length of a line
 set wrap
 set linebreak
 set textwidth=80
 
-" :source $VIMRUNTIME/ftplugin/man.vim
-
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
-
 " Don't use Ex mode, use Q for formatting
 map Q gq
-
-" This is an alternative that also works in block mode, but the deleted
-" text is lost and it only works for putting the current register.
-"vnoremap p "_dp
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -108,7 +97,6 @@ if has("autocmd")
 
   " For all text files set 'textwidth' to 80 characters.
   autocmd FileType text setlocal textwidth=80
-  " for Java
 
   autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
   autocmd FileType lua setlocal expandtab shiftwidth=4 softtabstop=4
@@ -149,18 +137,12 @@ if has("autocmd")
 
   augroup END
 
-
-  " for cctree
-  " autocmd VimEnter * if filereadable('cscope.out') | CCTreeLoadDB cscope.out | endif
-
   augroup fileTemplate
   au!
-  "autocmd BufNewFile *.[ch],*.sh,*.java,*.cpp,*.cc exec ":call SetTitle()"
   autocmd BufNewFile * normal G
   augroup END
 
 else
-
   set autoindent		" always set autoindenting on
 
 endif " has("autocmd")
