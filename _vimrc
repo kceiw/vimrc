@@ -15,7 +15,7 @@ set lz
 set ignorecase
 " allows pattern matching with special characters
 set magic
-"set incsearch		" do incremental searching
+set incsearch		" do incremental searching
 set nu!                 " display line number
 set enc=utf-8
 set fileencodings=utf-8,gb18030,utf-16,big5
