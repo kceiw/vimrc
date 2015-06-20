@@ -28,6 +28,8 @@ set enc=utf-8
 set fileencodings=utf-8,gb18030,utf-16,big5
 set fileformats=unix,dos
 set nobackup
+" highlight the line where the cursor is
+set cursorline
 
 " show special characters
 set list
