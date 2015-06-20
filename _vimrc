@@ -183,3 +183,6 @@ map <leader>ec :botright cope<CR>
 
 " :cd. change working directory to that of the current file
 cmap cd. lcd %:p:h
+
+" map key to clear search highlight.
+nnoremap <leader><space> :noh<cr>
