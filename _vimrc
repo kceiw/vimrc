@@ -136,12 +136,6 @@ if has("autocmd")
   au BufEnter,BufRead,BufNewFile *.less setlocal ft=less
 
   augroup END
-
-  augroup fileTemplate
-  au!
-  autocmd BufNewFile * normal G
-  augroup END
-
 else
   set autoindent		" always set autoindenting on
 
