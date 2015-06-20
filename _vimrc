@@ -11,8 +11,8 @@ set history=50		" keep 50 lines of command line history
 set showcmd		" display incomplete commands
 " do not redraw, when running macros..
 set lz
-" ignore case when searching
-set ignorecase
+" ignore case if search pattern is all lowercase,case-sensitive otherwise
+set smartcase
 " allows pattern matching with special characters
 set magic
 set incsearch		" do incremental searching
