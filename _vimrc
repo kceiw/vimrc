@@ -139,8 +139,6 @@ if has("autocmd")
     \   exe "normal g`\"" |
     \ endif
 
-  " for velocity.vim
-  au BufEnter,BufRead,BufNewFile *.vm  setfiletype velocity
   au BufEnter,BufRead,BufNewFile *.txt setlocal ft=text
   au BufEnter,BufRead,BufNewFile *.js setlocal ft=javascript
   au BufEnter,BufRead,BufNewFile *.hbs setlocal ft=hbs
