@@ -145,6 +145,8 @@ if has("autocmd")
   au BufEnter,BufRead,BufNewFile *.ts setlocal ft=typescript
   au BufEnter,BufRead,BufNewFile *.json setlocal ft=json
   au BufEnter,BufRead,BufNewFile *.less setlocal ft=less
+  au BufEnter,BufRead,BufNewFile *.py setlocal ft=python
+  au BufEnter,BufRead,BufNewFile *.html setlocal ft=html
 
   augroup END
 else
