@@ -41,6 +41,8 @@ set autoread
 " auto implement enhancement
 set wildmenu
 
+set wildignore+=*.o,*.tmp,*.bak,*.so,*.swp,*.zip
+
 " highlight the matched parentheses
 set showmatch
 
