@@ -200,3 +200,11 @@ nnoremap <leader><space> :noh<cr>
 
 " strip trailing spaces
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
+
+if has("gui_running")
+  if has("gui_win32")
+    set guifont=Lucida_Sans_Typewriter:h16:cANSI
+    set guifontwide=NSimsun:h12
+  endif
+endif
