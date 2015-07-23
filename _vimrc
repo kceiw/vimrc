@@ -13,8 +13,8 @@ set backspace=indent,eol,start
 
 set ff=unix
 
-set history=50		" keep 50 lines of command line history
-set showcmd		" display incomplete commands
+set history=50          " keep 50 lines of command line history
+set showcmd             " display incomplete commands
 " do not redraw, when running macros..
 set lz
 set ignorecase
@@ -22,7 +22,7 @@ set ignorecase
 set smartcase
 " allows pattern matching with special characters
 set magic
-set incsearch		" do incremental searching
+set incsearch           " do incremental searching
 set nu!                 " display line number
 set enc=utf-8
 set fileencodings=utf-8,gb18030,utf-16,big5
@@ -46,7 +46,7 @@ set wildignore+=*.o,*.tmp,*.bak,*.so,*.swp,*.zip
 " highlight the matched parentheses
 set showmatch
 
-set ruler		" show the cursor position all the time
+set ruler               " show the cursor position all the time
 set rulerformat=%{strftime('%a\ %m')}
 set cmdheight=2
 set laststatus=2
@@ -152,7 +152,7 @@ if has("autocmd")
 
   augroup END
 else
-  set autoindent		" always set autoindenting on
+  set autoindent                " always set autoindenting on
 
 endif " has("autocmd")
 
