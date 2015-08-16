@@ -184,7 +184,7 @@ nmap <leader>tnew :tabnew<CR>
 nmap <leader>te :tabedit<CR>
 nmap <leader>tc :tabclose<CR>
 nmap <leader>tm :tabmove<CR>
-nmap <leader>tn :tabNex<CR>
+nmap <leader>tn :tabnext<CR>
 nmap <leader>tp :tabprevious<CR>
 nmap <leader>tf :tabfirst<CR>
 nmap <leader>tl :tablast<CR>
