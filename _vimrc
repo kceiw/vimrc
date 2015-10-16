@@ -204,6 +204,7 @@ nnoremap <leader><space> :noh<cr>
 " strip trailing spaces
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
+nnoremap <leader>u :GundoToggle<CR>
 
 if has("gui_running")
   if has("gui_win32")
