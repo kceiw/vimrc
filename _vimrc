@@ -30,6 +30,8 @@ set fileformats=unix,dos
 set nobackup
 " highlight the line where the cursor is
 set cursorline
+" instruct VIM not to always redraw, especially during macro
+set lazyredraw
 
 " show special characters
 set list
@@ -80,9 +82,10 @@ set formatoptions=tcrqnocw
 
 
 " whether fold or not
-" set foldenable
+set foldenable
 set foldmethod=syntax
 set foldcolumn=0
+set foldlevelstart=10
 
 " wrap and the length of a line
 set wrap
