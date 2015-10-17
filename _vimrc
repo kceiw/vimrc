@@ -45,6 +45,8 @@ set wildmenu
 
 set wildignore+=*.o,*.tmp,*.bak,*.so,*.swp,*.zip
 
+set modeline
+
 " highlight the matched parentheses
 set showmatch
 
