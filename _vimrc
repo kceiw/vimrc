@@ -135,6 +135,8 @@ if has("autocmd")
   autocmd FileType c setlocal shiftwidth=8 tabstop=8 textwidth=80
   autocmd FileType cpp setlocal shiftwidth=8 tabstop=8 textwidth=80
   autocmd FileType java setlocal shiftwidth=8 tabstop=8
+  autocmd FileType xaml setlocal expandtab shiftwidth=4 softtabstop=4
+  autocmd FileType xml setlocal expandtab shiftwidth=4 softtabstop=4
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
