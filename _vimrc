@@ -23,7 +23,11 @@ set smartcase
 " allows pattern matching with special characters
 set magic
 set incsearch           " do incremental searching
-set nu!                 " display line number
+
+" show relative line number
+set number
+set relativenumber
+
 set enc=utf-8
 set fileencodings=utf-8,gb18030,utf-16,big5
 set fileformats=unix,dos
