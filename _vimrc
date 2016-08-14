@@ -165,6 +165,12 @@ if has("autocmd")
   au BufEnter,BufRead,BufNewFile *.csproj setlocal ft=csproj
   au BufEnter,BufRead,BufNewFile *.targets setlocal ft=targets
 
+  " Always have RainbowParentheses on
+  au VimEnter * RainbowParenthesesToggle
+  au Syntax * RainbowParenthesesLoadRound
+  au Syntax * RainbowParenthesesLoadSquare
+  au Syntax * RainbowParenthesesLoadBraces
+
   augroup END
 else
   set autoindent                " always set autoindenting on
