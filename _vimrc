@@ -295,6 +295,22 @@ let g:pymode_rope_extract_variable_bind = '<leader>rv'
 " End of setting of plugin python mode
 """"""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""
+" Begin of setting of plugin Syntastic
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors = 1
+
+" End of setting of plugin Syntastic
+""""""""""""""""""""""""""""""""""""""
+
 if has("gui_running")
   if has("gui_win32")
     set guifont=Lucida_Sans_Typewriter:h16:cANSI
