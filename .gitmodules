@@ -55,3 +55,6 @@
 [submodule "bundle/DirDo"]
 	path = bundle/DirDo
 	url = https://github.com/vim-scripts/DirDo.vim
+[submodule "bundle/local-vimrc"]
+	path = bundle/local-vimrc
+	url = https://github.com/MarcWeber/vim-addon-local-vimrc.git
