@@ -157,7 +157,6 @@ if has("autocmd")
   au BufEnter,BufRead,BufNewFile *.txt setlocal ft=text
   au BufEnter,BufRead,BufNewFile *.js setlocal ft=javascript
   au BufEnter,BufRead,BufNewFile *.hbs setlocal ft=hbs
-  au BufEnter,BufRead,BufNewFile *.ts setlocal ft=typescript
   au BufEnter,BufRead,BufNewFile *.json setlocal ft=json
   au BufEnter,BufRead,BufNewFile *.less setlocal ft=less
   au BufEnter,BufRead,BufNewFile *.py setlocal ft=python
