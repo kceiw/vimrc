@@ -143,7 +143,6 @@ if has("autocmd")
   autocmd FileType c setlocal shiftwidth=8 tabstop=8 textwidth=80
   autocmd FileType cpp setlocal shiftwidth=8 tabstop=8 textwidth=80
   autocmd FileType java setlocal shiftwidth=8 tabstop=8
-  autocmd FileType xaml setlocal expandtab shiftwidth=4 softtabstop=4
   autocmd FileType xml setlocal expandtab shiftwidth=4 softtabstop=4
 
   " When editing a file, always jump to the last known cursor position.
@@ -163,6 +162,7 @@ if has("autocmd")
   au BufEnter,BufRead,BufNewFile *.html setlocal ft=html
   au BufEnter,BufRead,BufNewFile *.csproj setlocal ft=csproj
   au BufEnter,BufRead,BufNewFile *.targets setlocal ft=targets
+  au BufEnter,BufRead,bufNewFile *.xaml setlocal ft=xml
 
   " Always have RainbowParentheses on
   au VimEnter * RainbowParenthesesToggle
