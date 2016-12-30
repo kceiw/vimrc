@@ -72,7 +72,7 @@ set laststatus=2
 " %p percentile
 " %% %
 " %L total line number
-set statusline=%f%m%r\ 0x%B\ %y\ %l:%c(%p%%)/%L%<\ %{&fileformat}\ %{&fileencoding}\ %{strftime(\"%a\ %d/%m\ %H:%M\")}
+set statusline=%f%m%r\ %y\ %l:%c(%p%%)/%L%<\ %{&fileformat}\ %{&fileencoding}\ %{strftime(\"%a\ %d/%m\ %H:%M\")}
 
 " auto format
 " t: auto-wrap text using textwidth. (does not apply to comments)
