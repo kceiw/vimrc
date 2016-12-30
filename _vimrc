@@ -309,6 +309,13 @@ let g:syntastic_aggregate_errors = 1
 
 " End of setting of plugin Syntastic
 """"""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""
+" Begin of setting of plugin fugutive
+
+autocmd BufReadPost fugitive://* set bufhidden=delete
+
+" End of setting of plugin fugutive
+""""""""""""""""""""""""""""""""""""""
 
 if has("gui_running")
   if has("gui_win32")
