@@ -164,12 +164,6 @@ if has("autocmd")
   au BufEnter,BufRead,BufNewFile *.targets setlocal ft=targets
   au BufEnter,BufRead,bufNewFile *.xaml setlocal ft=xml
 
-  " Always have RainbowParentheses on
-  au VimEnter * RainbowParenthesesToggle
-  au Syntax * RainbowParenthesesLoadRound
-  au Syntax * RainbowParenthesesLoadSquare
-  au Syntax * RainbowParenthesesLoadBraces
-
   augroup END
 else
   set autoindent                " always set autoindenting on
@@ -312,9 +306,25 @@ let g:syntastic_aggregate_errors = 1
 """"""""""""""""""""""""""""""""""""""
 " Begin of setting of plugin fugutive
 
-autocmd BufReadPost fugitive://* set bufhidden=delete
+if has("autocmd")
+  autocmd BufReadPost fugitive://* set bufhidden=delete
+endif " has("autocmd")
 
 " End of setting of plugin fugutive
+""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""
+" Begin of setting of plugin rainbow_parentheses
+
+" Always have RainbowParentheses on
+if has("autocmd")
+  au VimEnter * RainbowParenthesesToggle
+  au Syntax * RainbowParenthesesLoadRound
+  au Syntax * RainbowParenthesesLoadSquare
+  au Syntax * RainbowParenthesesLoadBraces
+endif " has("autocmd")
+
+" Begin of setting of plugin rainbow_parentheses
 """"""""""""""""""""""""""""""""""""""
 
 if has("gui_running")
