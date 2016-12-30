@@ -137,8 +137,6 @@ if has("autocmd")
   autocmd FileType objc setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
   autocmd FileType cs setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
   autocmd FileType sh setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
-  autocmd FileType csproj setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
-  autocmd FileType targets setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
   autocmd FileType c setlocal shiftwidth=8 tabstop=8 textwidth=80
   autocmd FileType cpp setlocal shiftwidth=8 tabstop=8 textwidth=80
@@ -160,8 +158,8 @@ if has("autocmd")
   au BufEnter,BufRead,BufNewFile *.less setlocal ft=less
   au BufEnter,BufRead,BufNewFile *.py setlocal ft=python
   au BufEnter,BufRead,BufNewFile *.html setlocal ft=html
-  au BufEnter,BufRead,BufNewFile *.csproj setlocal ft=csproj
-  au BufEnter,BufRead,BufNewFile *.targets setlocal ft=targets
+  au BufEnter,BufRead,BufNewFile *.csproj setlocal ft=xml tabstop=2 shiftwidth=2 softtabstop=2
+  au BufEnter,BufRead,BufNewFile *.targets setlocal ft=xml tabstop=2 shiftwidth=2 softtabstop=2
   au BufEnter,BufRead,bufNewFile *.xaml setlocal ft=xml
 
   augroup END
