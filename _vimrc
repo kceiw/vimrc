@@ -128,7 +128,6 @@ if has("autocmd")
   autocmd FileType less setlocal expandtab shiftwidth=4 softtabstop=4
   autocmd FileType json setlocal expandtab shiftwidth=4 softtabstop=4
   autocmd FileType typescript setlocal expandtab shiftwidth=4 softtabstop=4
-  autocmd FileType ts setlocal expandtab shiftwidth=4 softtabstop=4
   autocmd FileType javascript setlocal expandtab shiftwidth=4 softtabstop=4
   autocmd FileType sql setlocal expandtab shiftwidth=4 softtabstop=4
   autocmd FileType html setlocal expandtab shiftwidth=4 softtabstop=4
@@ -322,7 +321,15 @@ if has("autocmd")
   au Syntax * RainbowParenthesesLoadBraces
 endif " has("autocmd")
 
-" Begin of setting of plugin rainbow_parentheses
+" End of setting of plugin rainbow_parentheses
+""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""
+" Begin of setting of plugin tsuquyomi
+" show method signature. It slows down completion
+let g:tsuquyomi_completion_detail = 1
+autocmd FileType typescript setlocal completeopt+=menu,preview
+" End of setting of plugin tsuquyomi
 """"""""""""""""""""""""""""""""""""""
 
 if has("gui_running")
