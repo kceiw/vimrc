@@ -186,6 +186,8 @@ nmap <leader>wl <C-W>l
 nmap <leader>w- <C-W>-
 nmap <leader>w+ <C-W>+
 nmap <leader>w= <C-W>=
+nmap <leader>w, <C-W><
+nmap <leader>w. <C-W>>
 
 " redraw
 map <leader>l :redraw<CR>
