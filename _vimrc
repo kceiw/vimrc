@@ -327,6 +327,15 @@ endif " has("autocmd")
 """"""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""
+" Begin of setting of plugin Grep
+
+let Grep_Skip_Dirs = ".git .vs"
+let Grep_Skip_Files = "*.bak *~ *.swp ~*"
+
+" End of setting of plugin Grep
+""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""
 " Begin of setting of plugin tsuquyomi
 " show method signature. It slows down completion
 let g:tsuquyomi_completion_detail = 1
