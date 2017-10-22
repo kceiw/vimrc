@@ -70,9 +70,9 @@
 [submodule "bundle/vimproc.vim"]
 	path = bundle/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim.git
-[submodule ".\\bundle\\vim-nuuid"]
-	path = .\\bundle\\vim-nuuid
+[submodule "bundle/vim-nuuid"]
+	path = bundle/vim-nuuid
 	url = https://github.com/kburdett/vim-nuuid.git
-[submodule "bundle\\greplace"]
-	path = bundle\\greplace
+[submodule "bundle/greplace"]
+	path = bundle/greplace
 	url = https://github.com/vim-scripts/greplace.vim.git
