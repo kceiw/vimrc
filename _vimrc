@@ -288,21 +288,6 @@ let g:pymode_rope_extract_variable_bind = '<leader>rv'
 """"""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""
-" Begin of setting of plugin Syntastic
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_errors = 1
-
-" End of setting of plugin Syntastic
-""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""
 " Begin of setting of plugin fugutive
 
 if has("autocmd")
@@ -324,6 +309,15 @@ if has("autocmd")
 endif " has("autocmd")
 
 " End of setting of plugin rainbow_parentheses
+""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""
+" Begin of setting of ALE
+" Only run ale on file save
+let g:ale_lint_on_text_changed = 'never'
+" if you don't want linters to run on opening a file
+let g:ale_lint_on_enter = 0
+" End of setting of ALE
 """"""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""
