@@ -328,6 +328,14 @@ autocmd FileType typescript setlocal completeopt+=menu,preview
 " End of setting of plugin tsuquyomi
 """"""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""
+" Begin of setting of plugin NERDTree
+" Show NERT tree at the right
+let g:NERDTreeWinPos = 'right'
+let NERDTreeShowHidden = 1
+" End of setting of plugin NERDTree
+""""""""""""""""""""""""""""""""""""""
+
 if has("gui_running")
   if has("gui_win32")
     set guifont=Lucida_Sans_Typewriter:h16:cANSI
