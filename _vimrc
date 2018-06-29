@@ -62,7 +62,7 @@ set laststatus=2
 " %F file name
 " %m modification status
 " %r read only?
-" %Y file type
+" %y file type
 " %{&fileformat} file encoding
 " %b the ACSII on the cursor
 " %B the hex code on the cursor
@@ -72,7 +72,7 @@ set laststatus=2
 " %p percentile
 " %% %
 " %L total line number
-set statusline=%f%m%r\ %y\ %l:%c(%p%%)/%L%<\ %{&fileformat}\ %{&fileencoding}\ %{strftime(\"%a\ %d/%m\ %H:%M\")}
+set statusline=%f%m%r\ %y\ %l:%c(%p%%)/%L%<\ %{fugitive#statusline()}\ %{&fileformat}\ %{&fileencoding}\ %{strftime(\"%a\ %d/%m\ %H:%M\")}
 
 " auto format
 " t: auto-wrap text using textwidth. (does not apply to comments)
@@ -160,6 +160,8 @@ if has("autocmd")
   au BufEnter,BufRead,BufNewFile *.csproj setlocal ft=xml tabstop=2 shiftwidth=2 softtabstop=2
   au BufEnter,BufRead,BufNewFile *.targets setlocal ft=xml tabstop=2 shiftwidth=2 softtabstop=2
   au BufEnter,BufRead,bufNewFile *.xaml setlocal ft=xml
+
+  autocmd QuickFixCmdPost *grep* cwindow
 
   augroup END
 else
