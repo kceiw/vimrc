@@ -25,9 +25,6 @@
 [submodule "bundle/yankring"]
 	path = bundle/yankring
 	url = https://github.com/vim-scripts/YankRing.vim.git
-[submodule "bundle/rainbow_parentheses"]
-	path = bundle/rainbow_parentheses
-	url = https://github.com/kien/rainbow_parentheses.vim.git
 [submodule "bundle/vim-better-whitespace"]
 	path = bundle/vim-better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace.git
@@ -79,3 +76,6 @@
 [submodule "bundle/ale"]
 	path = bundle/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "bundle/rainbow"]
+	path = bundle/rainbow
+	url = https://github.com/luochen1990/rainbow.git

@@ -300,18 +300,11 @@ endif " has("autocmd")
 """"""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""
-" Begin of setting of plugin rainbow_parentheses
-
-" Always have RainbowParentheses on
-if has("autocmd")
-  au VimEnter * RainbowParenthesesToggle
-  au Syntax * RainbowParenthesesLoadRound
-  au Syntax * RainbowParenthesesLoadSquare
-  au Syntax * RainbowParenthesesLoadBraces
-endif " has("autocmd")
-
-" End of setting of plugin rainbow_parentheses
+" Begin of setting of rainbow
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+" End of setting of rainbow
 """"""""""""""""""""""""""""""""""""""
+
 
 """"""""""""""""""""""""""""""""""""""
 " Begin of setting of ALE
