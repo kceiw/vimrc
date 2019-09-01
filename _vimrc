@@ -119,28 +119,25 @@ if has("autocmd")
   " Remove All autocommands for the current group.
   au!
 
-  " For all text files set 'textwidth' to 80 characters.
-  autocmd FileType text setlocal textwidth=80
+  autocmd FileType python setlocal shiftwidth=4 softtabstop=4
+  autocmd FileType lua setlocal shiftwidth=4 softtabstop=4
+  autocmd FileType css setlocal shiftwidth=4 softtabstop=4
+  autocmd FileType less setlocal shiftwidth=4 softtabstop=4
+  autocmd FileType json setlocal shiftwidth=4 softtabstop=4
+  autocmd FileType typescript setlocal shiftwidth=4 softtabstop=4
+  autocmd FileType javascript setlocal shiftwidth=4 softtabstop=4
+  autocmd FileType sql setlocal shiftwidth=4 softtabstop=4
+  autocmd FileType html setlocal shiftwidth=4 softtabstop=4
+  autocmd FileType htmldjango setlocal shiftwidth=4 softtabstop=4
+  autocmd FileType hbs setlocal shiftwidth=4 softtabstop=4
+  autocmd FileType objc setlocal tabstop=4 shiftwidth=4 softtabstop=4
+  autocmd FileType cs setlocal tabstop=4 shiftwidth=4 softtabstop=4
+  autocmd FileType sh setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
-  autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
-  autocmd FileType lua setlocal expandtab shiftwidth=4 softtabstop=4
-  autocmd FileType css setlocal expandtab shiftwidth=4 softtabstop=4
-  autocmd FileType less setlocal expandtab shiftwidth=4 softtabstop=4
-  autocmd FileType json setlocal expandtab shiftwidth=4 softtabstop=4
-  autocmd FileType typescript setlocal expandtab shiftwidth=4 softtabstop=4
-  autocmd FileType javascript setlocal expandtab shiftwidth=4 softtabstop=4
-  autocmd FileType sql setlocal expandtab shiftwidth=4 softtabstop=4
-  autocmd FileType html setlocal expandtab shiftwidth=4 softtabstop=4
-  autocmd FileType htmldjango setlocal expandtab shiftwidth=4 softtabstop=4
-  autocmd FileType hbs setlocal expandtab shiftwidth=4 softtabstop=4
-  autocmd FileType objc setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
-  autocmd FileType cs setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
-  autocmd FileType sh setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
-
-  autocmd FileType c setlocal shiftwidth=8 tabstop=8 textwidth=80
-  autocmd FileType cpp setlocal shiftwidth=8 tabstop=8 textwidth=80
-  autocmd FileType java setlocal shiftwidth=8 tabstop=8
-  autocmd FileType xml setlocal expandtab shiftwidth=4 softtabstop=4
+  autocmd FileType c setlocal shiftwidth=4 tabstop=4
+  autocmd FileType cpp setlocal shiftwidth=4 tabstop=4
+  autocmd FileType java setlocal shiftwidth=4 tabstop=4
+  autocmd FileType xml setlocal  shiftwidth=4 softtabstop=4
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -246,7 +243,6 @@ let g:pymode_doc_bind = '<leader>pd'
 " setlocal number
 " endif
 " setlocal nowrap
-" setlocal textwidth=79
 " setlocal commentstring=#%s
 " setlocal
 " define=^\s*\\(def\\\\|class\\)
