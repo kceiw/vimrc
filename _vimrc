@@ -13,8 +13,6 @@ set backspace=indent,eol,start
 
 set history=50          " keep 50 lines of command line history
 set showcmd             " display incomplete commands
-" do not redraw, when running macros..
-set lz
 set ignorecase
 " ignore case if search pattern is all lowercase,case-sensitive otherwise
 set smartcase
@@ -45,7 +43,7 @@ set autoread
 " auto implement enhancement
 set wildmenu
 
-set wildignore+=*.o,*.tmp,*.bak,*.so,*.swp,*.zip
+set wildignore+=*.o,*.tmp,*.bak,*.so,*.swp,*.zip,*.git,*.git/*,*pyc,*.obj,*.lib,*.dll,*gz,*bzip2
 
 set modeline
 
@@ -82,6 +80,7 @@ set statusline=%f%m%r\ %y\ %l:%c(%p%%)/%L%<\ %{fugitive#statusline()}\ %{&filefo
 " o: auto insert comment leader after hitting 'o' or 'O'
 " a: auto format paragraphs when text is inserted or deleted
 " w: a trailing non white space ends a paragraph
+" n: numbered lists
 set formatoptions=tcrqnocw
 
 
@@ -106,6 +105,8 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+set noexpandtab
+
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
   filetype plugin indent on
@@ -117,25 +118,25 @@ if has("autocmd")
   " Remove All autocommands for the current group.
   au!
 
-  autocmd FileType python setlocal shiftwidth=4 softtabstop=4
-  autocmd FileType lua setlocal shiftwidth=4 softtabstop=4
-  autocmd FileType css setlocal shiftwidth=4 softtabstop=4
-  autocmd FileType less setlocal shiftwidth=4 softtabstop=4
-  autocmd FileType json setlocal shiftwidth=4 softtabstop=4
-  autocmd FileType typescript setlocal shiftwidth=4 softtabstop=4
-  autocmd FileType javascript setlocal shiftwidth=4 softtabstop=4
-  autocmd FileType sql setlocal shiftwidth=4 softtabstop=4
-  autocmd FileType html setlocal shiftwidth=4 softtabstop=4
-  autocmd FileType htmldjango setlocal shiftwidth=4 softtabstop=4
-  autocmd FileType hbs setlocal shiftwidth=4 softtabstop=4
-  autocmd FileType objc setlocal tabstop=4 shiftwidth=4 softtabstop=4
-  autocmd FileType cs setlocal tabstop=4 shiftwidth=4 softtabstop=4
-  autocmd FileType sh setlocal tabstop=4 shiftwidth=4 softtabstop=4
+  autocmd FileType python setlocal shiftwidth=4 tabstop=4
+  autocmd FileType lua setlocal shiftwidth=4 tabstop=4
+  autocmd FileType css setlocal shiftwidth=4 tabstop=4
+  autocmd FileType less setlocal shiftwidth=4 tabstop=4
+  autocmd FileType json setlocal shiftwidth=4 tabstop=4
+  autocmd FileType typescript setlocal shiftwidth=4 tabstop=4
+  autocmd FileType javascript setlocal shiftwidth=4 tabstop=4
+  autocmd FileType sql setlocal shiftwidth=4 tabstop=4
+  autocmd FileType html setlocal shiftwidth=4 tabstop=4
+  autocmd FileType htmldjango setlocal shiftwidth=4 tabstop=4
+  autocmd FileType hbs setlocal shiftwidth=4 tabstop=4
+  autocmd FileType objc setlocal tabstop=4 shiftwidth=4 tabstop=4
+  autocmd FileType cs setlocal tabstop=4 shiftwidth=4 tabstop=4
+  autocmd FileType sh setlocal tabstop=4 shiftwidth=4 tabstop=4
 
   autocmd FileType c setlocal shiftwidth=4 tabstop=4
   autocmd FileType cpp setlocal shiftwidth=4 tabstop=4
   autocmd FileType java setlocal shiftwidth=4 tabstop=4
-  autocmd FileType xml setlocal  shiftwidth=4 softtabstop=4
+  autocmd FileType xml setlocal  shiftwidth=4 tabstop=4
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -152,8 +153,8 @@ if has("autocmd")
   au BufEnter,BufRead,BufNewFile *.less setlocal ft=less
   au BufEnter,BufRead,BufNewFile *.py setlocal ft=python
   au BufEnter,BufRead,BufNewFile *.html setlocal ft=html
-  au BufEnter,BufRead,BufNewFile *.csproj setlocal ft=xml tabstop=2 shiftwidth=2 softtabstop=2
-  au BufEnter,BufRead,BufNewFile *.targets setlocal ft=xml tabstop=2 shiftwidth=2 softtabstop=2
+  au BufEnter,BufRead,BufNewFile *.csproj setlocal ft=xml tabstop=2 shiftwidth=2
+  au BufEnter,BufRead,BufNewFile *.targets setlocal ft=xml tabstop=2 shiftwidth=2
   au BufEnter,BufRead,bufNewFile *.xaml setlocal ft=xml
 
   autocmd QuickFixCmdPost *grep* cwindow
@@ -169,6 +170,7 @@ endif " has("autocmd")
 let mapleader = ","
 let g:mapleader = ","
 
+" ctags and cscope
 nmap <F10> :!ctags -R --c-kinds=+cdefgmnstuvx --c++-kinds=+cdefgmnstuvx --fields=+iamS --extra=+q --languages=+c++,c;cscope -bcqR <CR>
 nmap <F12> :cscope add cscope.out<CR>:CCTreeLoadDB cscope.out<CR>
 
@@ -199,8 +201,8 @@ nmap <leader>tp :tabprevious<CR>
 nmap <leader>tf :tabfirst<CR>
 nmap <leader>tl :tablast<CR>
 
-" open the error console
-map <leader>ec :botright cope<CR>
+" open the quickfix window
+map <leader>f :botright cope<CR>
 
 " :cd. change working directory to that of the current file
 cmap cd. lcd %:p:h
