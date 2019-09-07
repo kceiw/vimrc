@@ -11,8 +11,6 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-set ff=unix
-
 set history=50          " keep 50 lines of command line history
 set showcmd             " display incomplete commands
 " do not redraw, when running macros..
