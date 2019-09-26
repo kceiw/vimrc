@@ -282,6 +282,9 @@ let g:pymode_rope_organize_imports_bind = '<leader>oi'
 let g:pymode_rope_extract_method_bind = '<leader>rm'
 let g:pymode_rope_extract_variable_bind = '<leader>rv'
 
+" Use python 3 syntax
+let g:pymode_python = 'python3'
+
 " End of setting of plugin python mode
 """"""""""""""""""""""""""""""""""""""
 
