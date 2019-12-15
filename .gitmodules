@@ -55,15 +55,6 @@
 [submodule "bundle/vim-nuuid"]
 	path = bundle/vim-nuuid
 	url = https://github.com/kburdett/vim-nuuid.git
-[submodule "bundle/greplace"]
-	path = bundle/greplace
-	url = https://github.com/vim-scripts/greplace.vim.git
-[submodule "bundle/fzf.vim"]
-	path = bundle/fzf.vim
-	url = https://github.com/junegunn/fzf.vim.git
-[submodule "bundle/fzf"]
-	path = bundle/fzf
-	url = https://github.com/junegunn/fzf.git
 [submodule "bundle/ale"]
 	path = bundle/ale
 	url = https://github.com/w0rp/ale.git
