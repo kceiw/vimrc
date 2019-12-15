@@ -332,6 +332,40 @@ let NERDTreeShowHidden = 1
 " End of setting of plugin NERDTree
 """"""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""
+" Begin of omnisharp-vim
+" Looks like stdio doesn't work properly yet.
+"
+let g:OmniSharp_server_stdio = 0
+let g:OmniSharp_selector_ui = 'LeaderF' " Use LeaderF
+
+" only highlight documents when entering/leaving a buffer
+" 3 means to highlight whenver text changes.
+let g:OmniSharp_highlight_types = 2
+
+" Set the type lookup function to use the preview window instead of echoing it¬
+let g:OmniSharp_typeLookupInPreview = 1
+
+" Timeout in seconds to wait for a response from the server¬
+let g:OmniSharp_timeout = 5
+
+" Don't autoselect first omnicomplete option, show options even if there is only¬
+" one (so the preview documentation is accessible). Remove 'preview' if you¬
+" don't want to see any documentation whatsoever.¬
+set completeopt+=longest,menuone,preview
+
+" Close preview window when completion is done.
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+let g:ale_linters = {
+			\ 'cs': ['OmniSharp']
+			\}
+
+" Close preview window when completion is done.
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" End of omnisharp-vim
+
 if has("gui_running")
   if has("gui_win32")
     set guifont=Lucida_Sans_Typewriter:h16:cANSI
