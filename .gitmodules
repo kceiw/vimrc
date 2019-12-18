@@ -73,6 +73,6 @@
 [submodule "bundle/vim-peekaboo"]
 	path = bundle/vim-peekaboo
 	url = https://github.com/junegunn/vim-peekaboo.git
-[submodule "bundle/CompleteMe"]
-	path = bundle/CompleteMe
-	url = https://github.com/ycm-core/CompleteMe.git
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/ycm-core/YouCompleteMe.git
