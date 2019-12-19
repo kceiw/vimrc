@@ -366,13 +366,6 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " End of omnisharp-vim
 
-if has("gui_running")
-  if has("gui_win32")
-    set guifont=Lucida_Sans_Typewriter:h16:cANSI
-    set guifontwide=NSimsun:h12
-  endif
-endif
-
 " Put these lines at the very end of your vimrc file.
 
 " Load all plugins now.
