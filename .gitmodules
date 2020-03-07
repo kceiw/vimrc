@@ -64,12 +64,15 @@
 [submodule "bundle/omnisharp-vim"]
 	path = bundle/omnisharp-vim
 	url = https://github.com/OmniSharp/omnisharp-vim.git
-[submodule "bundle/LeaderF"]
-	path = bundle/LeaderF
-	url = https://github.com/Yggdroot/LeaderF.git
 [submodule "bundle/vim-peekaboo"]
 	path = bundle/vim-peekaboo
 	url = https://github.com/junegunn/vim-peekaboo.git
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
 	url = https://github.com/ycm-core/YouCompleteMe.git
+[submodule "bundle/fzf.vim"]
+	path = bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "bundle/fzf"]
+	path = bundle/fzf
+	url = https://github.com/junegunn/fzf.git

@@ -264,7 +264,7 @@ let NERDTreeShowHidden = 1
 " Looks like stdio doesn't work properly yet.
 "
 let g:OmniSharp_server_stdio = 0
-let g:OmniSharp_selector_ui = 'LeaderF' " Use LeaderF
+let g:OmniSharp_selector_ui = 'fzf'
 
 " only highlight documents when entering/leaving a buffer
 " 3 means to highlight whenver text changes.
