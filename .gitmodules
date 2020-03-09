@@ -88,12 +88,6 @@
 [submodule "bundle/calendar"]
 	path = bundle/calendar
 	url = https://github.com/mattn/calendar-vim.git
-[submodule "bundle/easytags"]
-	path = bundle/easytags
-	url = https://github.com/xolox/vim-easytags.git
-[submodule "bundle/vim-misc"]
-	path = bundle/vim-misc
-	url = https://github.com/xolox/vim-misc.git
-[submodule "bundle/shell"]
-	path = bundle/shell
-	url = https://github.com/xolox/vim-shell.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
