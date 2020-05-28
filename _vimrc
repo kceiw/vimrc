@@ -313,6 +313,20 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " End of omnisharp-vim
+""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""
+" Begin of vim-better-whitespace
+" Remove trailing whitespace on save
+let g:strip_whitespace_on_save = 1
+" Don't confirm when removing on save.
+let g:strip_whitespace_confirm=0
+" Only remove on the modified lines when it's saved.
+let g:strip_only_modified_lines=0
+" End of vim-better-whitespace
+""""""""""""""""""""""""""""""""""""""
+
+
 
 " Put these lines at the very end of your vimrc file.
 
