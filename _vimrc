@@ -111,6 +111,9 @@ set noexpandtab
 if has("autocmd")
   filetype plugin indent on
   set grepprg=grep\ -nH\ $*
+  if executable('rg')
+    set grepprg=rg\ --vimgrep\ --no-heading
+  endif
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
@@ -360,6 +363,14 @@ let g:strip_whitespace_confirm=0
 " Only remove on the modified lines when it's saved.
 let g:strip_only_modified_lines=0
 " End of vim-better-whitespace
+""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""
+" Begin of ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+" End of ack
 """"""""""""""""""""""""""""""""""""""
 
 
