@@ -275,6 +275,15 @@ let NERDTreeShowHidden = 1
 """"""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""
+" Begin of setting of plugin NERDCommenter
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+" End of setting of plugin NERDCommenter
+""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""
 " Begin of omnisharp-vim
 " Looks like stdio doesn't work properly yet.
 "
