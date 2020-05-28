@@ -238,6 +238,21 @@ let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowTo
 let g:ale_lint_on_text_changed = 'never'
 " if you don't want linters to run on opening a file
 let g:ale_lint_on_enter = 0
+" Show quickfix window when the file contains error/warning.
+let g:ale_open_list = 1
+" This can be useful if you are combining ALE with
+" some other plugin which sets quickfix errors, etc.
+let g:ale_keep_list_window_open = 1
+
+" Change the gutter character
+let g:ale_sign_error = 'LE'
+let g:ale_sign_warning = 'LW'
+
+let g:ale_linters = {
+			\ 'cs': ['OmniSharp'],
+                        \ 'py': ['pylint', 'flake8']
+			\}
+
 " End of setting of ALE
 """"""""""""""""""""""""""""""""""""""
 
@@ -283,10 +298,6 @@ set completeopt+=longest,menuone,preview
 
 " Close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-
-let g:ale_linters = {
-			\ 'cs': ['OmniSharp']
-			\}
 
 " Close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
