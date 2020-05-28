@@ -170,10 +170,6 @@ endif " has("autocmd")
 let mapleader = ","
 let g:mapleader = ","
 
-" ctags and cscope
-nmap <F10> :!ctags -R --c-kinds=+cdefgmnstuvx --c++-kinds=+cdefgmnstuvx --fields=+iamS --extra=+q --languages=+c++,c;cscope -bcqR <CR>
-nmap <F12> :cscope add cscope.out<CR>:CCTreeLoadDB cscope.out<CR>
-
 " vertically split the window and move to the new one
 nnoremap <leader>w <C-w>v<C-w>l
 
@@ -231,6 +227,10 @@ let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowTo
 " End of setting of rainbow
 """"""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""
+" Begin of setting of TagBar
+nmap <F8> :TagbarToggle<CR>
+""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""
 " Begin of setting of ALE
