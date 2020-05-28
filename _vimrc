@@ -271,6 +271,7 @@ autocmd FileType typescript setlocal completeopt+=menu,preview
 " If NERDTREE is at the right. Most likely Quickfix window will show below it.
 let g:NERDTreeWinPos = 'left'
 let NERDTreeShowHidden = 1
+map <C-n> :NERDTreeToggle<CR>
 " End of setting of plugin NERDTree
 """"""""""""""""""""""""""""""""""""""
 
