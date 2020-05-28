@@ -301,6 +301,9 @@ let g:OmniSharp_typeLookupInPreview = 1
 " Timeout in seconds to wait for a response from the server¬
 let g:OmniSharp_timeout = 5
 
+" Enable snippet completion
+let g:OmniSharp_want_snippet=1
+
 " Don't autoselect first omnicomplete option, show options even if there is only¬
 " one (so the preview documentation is accessible). Remove 'preview' if you¬
 " don't want to see any documentation whatsoever.¬
@@ -311,6 +314,39 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+augroup omnisharp_commands
+    autocmd!
+
+    " Show type information automatically when the cursor stops moving
+    autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
+
+    " The following commands are contextual, based on the cursor position.
+    autocmd FileType cs nnoremap <buffer> gd :OmniSharpGotoDefinition<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fs :OmniSharpFindSymbol<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
+
+    " Finds members in the current buffer
+    autocmd FileType cs nnoremap <buffer> <Leader>fm :OmniSharpFindMembers<CR>
+
+    autocmd FileType cs nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>tt :OmniSharpTypeLookup<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>dc :OmniSharpDocumentation<CR>
+    autocmd FileType cs nnoremap <buffer> <C-\> :OmniSharpSignatureHelp<CR>
+    autocmd FileType cs inoremap <buffer> <C-\> <C-o>:OmniSharpSignatureHelp<CR>
+
+    " Navigate up and down by method/property/field
+    autocmd FileType cs nnoremap <buffer> <C-k> :OmniSharpNavigateUp<CR>
+    autocmd FileType cs nnoremap <buffer> <C-j> :OmniSharpNavigateDown<CR>
+
+    " Find all code errors/warnings for the current solution and populate the quickfix window
+    autocmd FileType cs nnoremap <buffer> <Leader>cc :OmniSharpGlobalCodeCheck<CR>
+    autocmd FileType cs nnoremap <Leader>cf :OmniSharpCodeFormat<CR>
+
+    " Rename with dialog
+    autocmd FileType cs nnoremap <Leader>nm :OmniSharpRename<CR>
+augroup END
 
 " End of omnisharp-vim
 """"""""""""""""""""""""""""""""""""""
