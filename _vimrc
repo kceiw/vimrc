@@ -374,6 +374,17 @@ endif
 """"""""""""""""""""""""""""""""""""""
 
 
+""""""""""""""""""""""""""""""""""""""
+" Begin of YouCompleteMe
+let g:ycm_filetype_whitelist = {
+        \ 'python': 1,
+        \ 'cs': 1,
+        \ 'javascript': 1,
+        \ 'typescript': 1
+        \ }
+" End of YouCompleteMe
+""""""""""""""""""""""""""""""""""""""
+
 
 " Put these lines at the very end of your vimrc file.
 
