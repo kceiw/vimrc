@@ -106,6 +106,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 set noexpandtab
+set tabstop=4 shiftwidth=4 softtabstop=4
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -120,26 +121,6 @@ if has("autocmd")
 
   " Remove All autocommands for the current group.
   au!
-
-  autocmd FileType python setlocal shiftwidth=4 tabstop=4
-  autocmd FileType lua setlocal shiftwidth=4 tabstop=4
-  autocmd FileType css setlocal shiftwidth=4 tabstop=4
-  autocmd FileType less setlocal shiftwidth=4 tabstop=4
-  autocmd FileType json setlocal shiftwidth=4 tabstop=4
-  autocmd FileType typescript setlocal shiftwidth=4 tabstop=4
-  autocmd FileType javascript setlocal shiftwidth=4 tabstop=4
-  autocmd FileType sql setlocal shiftwidth=4 tabstop=4
-  autocmd FileType html setlocal shiftwidth=4 tabstop=4
-  autocmd FileType htmldjango setlocal shiftwidth=4 tabstop=4
-  autocmd FileType hbs setlocal shiftwidth=4 tabstop=4
-  autocmd FileType objc setlocal tabstop=4 shiftwidth=4 tabstop=4
-  autocmd FileType cs setlocal tabstop=4 shiftwidth=4 tabstop=4
-  autocmd FileType sh setlocal tabstop=4 shiftwidth=4 tabstop=4
-
-  autocmd FileType c setlocal shiftwidth=4 tabstop=4
-  autocmd FileType cpp setlocal shiftwidth=4 tabstop=4
-  autocmd FileType java setlocal shiftwidth=4 tabstop=4
-  autocmd FileType xml setlocal  shiftwidth=4 tabstop=4
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -156,9 +137,9 @@ if has("autocmd")
   au BufEnter,BufRead,BufNewFile *.less setlocal ft=less
   au BufEnter,BufRead,BufNewFile *.py setlocal ft=python
   au BufEnter,BufRead,BufNewFile *.html setlocal ft=html
-  au BufEnter,BufRead,BufNewFile *.csproj setlocal ft=xml tabstop=2 shiftwidth=2
-  au BufEnter,BufRead,BufNewFile *.targets setlocal ft=xml tabstop=2 shiftwidth=2
-  au BufEnter,BufRead,bufNewFile *.xaml setlocal ft=xml
+  au BufEnter,BufRead,BufNewFile *.csproj setlocal ft=xml tabstop=2 shiftwidth=2 expandtab
+  au BufEnter,BufRead,BufNewFile *.targets setlocal ft=xml tabstop=2 shiftwidth=2 expandtab
+  au BufEnter,BufRead,BufNewFile *.xaml setlocal ft=xml
 
   autocmd QuickFixCmdPost *grep* cwindow
 
