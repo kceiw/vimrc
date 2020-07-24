@@ -140,6 +140,7 @@ if has("autocmd")
   au BufEnter,BufRead,BufNewFile *.csproj setlocal ft=xml tabstop=2 shiftwidth=2 expandtab
   au BufEnter,BufRead,BufNewFile *.targets setlocal ft=xml tabstop=2 shiftwidth=2 expandtab
   au BufEnter,BufRead,BufNewFile *.xaml setlocal ft=xml
+  au BufEnter,BufRead,BufNewFile *.yaml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
   autocmd QuickFixCmdPost *grep* cwindow
 
