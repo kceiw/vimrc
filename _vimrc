@@ -241,14 +241,6 @@ let g:ale_linters = {
 """"""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""
-" Begin of setting of plugin tsuquyomi
-" show method signature. It slows down completion
-let g:tsuquyomi_completion_detail = 1
-autocmd FileType typescript setlocal completeopt+=menu,preview
-" End of setting of plugin tsuquyomi
-""""""""""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""""""""""
 " Begin of setting of plugin NERDTree
 " Show NERT tree at the left
 " Quickfix window seems to open below the second window.
@@ -317,7 +309,7 @@ augroup ycm_keymapping
 
 	" Enable mapping for the supported files.
 
-	for t in ["c", "cpp", "cs", "javascript", "python"]
+	for t in ["c", "cpp", "cs", "javascript", "python", "typescript"]
 		autocmd FileType t nnoremap <buffer> <Leader>gd :YcmCompleter Goto<CR>
 		autocmd FileType t nnoremap <buffer> <Leader>gim :YcmCompleter GotoImplementation<CR>
 		autocmd FileType t nnoremap <buffer> <Leader>gin :YcmCompleter GotoInclude<CR>
