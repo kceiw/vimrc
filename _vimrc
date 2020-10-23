@@ -6,7 +6,7 @@ set nocompatible
 execute pathogen#infect()
 
 " auto reload vimrc when editing it
-autocmd! bufwritepost .vimrc source ~/.vimrc
+autocmd! BufWritePost .vimrc source ~/.vimrc
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -234,8 +234,7 @@ let g:ale_sign_error = 'LE'
 let g:ale_sign_warning = 'LW'
 
 let g:ale_linters = {
-			\ 'cs': ['OmniSharp'],
-                        \ 'py': ['pylint', 'flake8']
+			\ 'py': ['pylint', 'flake8']
 			\}
 
 " End of setting of ALE
@@ -270,73 +269,6 @@ let g:NERDCommentEmptyLines = 1
 """"""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""
-" Begin of omnisharp-vim
-" Looks like stdio doesn't work properly yet.
-"
-let g:OmniSharp_server_stdio = 0
-let g:OmniSharp_selector_ui = 'fzf'
-
-" only highlight documents when entering/leaving a buffer
-" 3 means to highlight whenver text changes.
-let g:OmniSharp_highlight_types = 2
-
-" Set the type lookup function to use the preview window instead of echoing it¬
-let g:OmniSharp_typeLookupInPreview = 1
-
-" Timeout in seconds to wait for a response from the server¬
-let g:OmniSharp_timeout = 5
-
-" Enable snippet completion
-let g:OmniSharp_want_snippet=1
-
-" Don't autoselect first omnicomplete option, show options even if there is only¬
-" one (so the preview documentation is accessible). Remove 'preview' if you¬
-" don't want to see any documentation whatsoever.¬
-set completeopt+=longest,menuone,preview
-
-" Close preview window when completion is done.
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-
-" Close preview window when completion is done.
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-
-augroup omnisharp_commands
-    autocmd!
-
-    " Show type information automatically when the cursor stops moving
-    autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
-
-    " The following commands are contextual, based on the cursor position.
-    autocmd FileType cs nnoremap <buffer> gd :OmniSharpGotoDefinition<CR>
-    autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
-    autocmd FileType cs nnoremap <buffer> <Leader>fs :OmniSharpFindSymbol<CR>
-    autocmd FileType cs nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
-
-    " Finds members in the current buffer
-    autocmd FileType cs nnoremap <buffer> <Leader>fm :OmniSharpFindMembers<CR>
-
-    autocmd FileType cs nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
-    autocmd FileType cs nnoremap <buffer> <Leader>tt :OmniSharpTypeLookup<CR>
-    autocmd FileType cs nnoremap <buffer> <Leader>dc :OmniSharpDocumentation<CR>
-    autocmd FileType cs nnoremap <buffer> <C-\> :OmniSharpSignatureHelp<CR>
-    autocmd FileType cs inoremap <buffer> <C-\> <C-o>:OmniSharpSignatureHelp<CR>
-
-    " Navigate up and down by method/property/field
-    autocmd FileType cs nnoremap <buffer> <C-k> :OmniSharpNavigateUp<CR>
-    autocmd FileType cs nnoremap <buffer> <C-j> :OmniSharpNavigateDown<CR>
-
-    " Find all code errors/warnings for the current solution and populate the quickfix window
-    autocmd FileType cs nnoremap <buffer> <Leader>cc :OmniSharpGlobalCodeCheck<CR>
-    autocmd FileType cs nnoremap <Leader>cf :OmniSharpCodeFormat<CR>
-
-    " Rename with dialog
-    autocmd FileType cs nnoremap <Leader>nm :OmniSharpRename<CR>
-augroup END
-
-" End of omnisharp-vim
-""""""""""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""""""""""
 " Begin of vim-better-whitespace
 " Remove trailing whitespace on save
 let g:strip_whitespace_on_save = 1
@@ -364,6 +296,49 @@ let g:ycm_filetype_whitelist = {
         \ 'javascript': 1,
         \ 'typescript': 1
         \ }
+
+" auto trigger ycm. This also enable signature help
+let g:ycm_auto_trigger = 1
+
+" Set the error symbol
+let g:ycm_error_symbol = 'EE'
+
+" Set the warning symbol
+let g:ycm_warning_symbol = 'WW'
+
+" auto close the preview window
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+" auto complete in comment in case it has code snippet
+let g:ycm_complete_in_comments = 1
+
+augroup ycm_keymapping
+    autocmd!
+
+	" Enable mapping for the supported files.
+
+	for t in ["c", "cpp", "cs", "javascript", "python"]
+		autocmd FileType t nnoremap <buffer> <Leader>gd :YcmCompleter Goto<CR>
+		autocmd FileType t nnoremap <buffer> <Leader>gim :YcmCompleter GotoImplementation<CR>
+		autocmd FileType t nnoremap <buffer> <Leader>gin :YcmCompleter GotoInclude<CR>
+		autocmd FileType t nnoremap <buffer> <Leader>gp :YcmCompleter GetParent<CR>
+		autocmd FileType t nnoremap <buffer> <Leader>gr :YcmCompleter GoToReferences<CR>
+		autocmd FileType t nnoremap <buffer> <Leader>gs :YcmCompleter GoToSymbol
+		autocmd FileType t nnoremap <buffer> <Leader>gt :YcmCompleter GetType<CR>
+
+		autocmd FileType t nnoremap <buffer> <Leader>rr :YcmCompleter RefactorRename
+
+		autocmd FileType t nnoremap <buffer> <Leader>fx :YcmCompleter FixIt<CR>
+		autocmd FileType t nnoremap <buffer> <Leader>dc :YcmCompleter GetDoc<CR>
+
+		autocmd FileType t nnoremap <buffer> <Leader>cf :YcmCompleter Format<CR>
+	endfor
+
+	autocmd FileType cs nnoremap <buffer> <Leader>gim :YcmCompleter GoToImplementationElseDeclaration<CR>
+
+
+augroup END
+
 " End of YouCompleteMe
 """"""""""""""""""""""""""""""""""""""
 
