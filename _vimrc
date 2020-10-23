@@ -246,8 +246,24 @@ let g:ale_linters = {
 " Quickfix window seems to open below the second window.
 " If NERDTREE is at the right. Most likely Quickfix window will show below it.
 let g:NERDTreeWinPos = 'left'
+
+" Show hidden files
 let NERDTreeShowHidden = 1
-map <C-n> :NERDTreeToggle<CR>
+
+augroup nerdtree_auto
+	autocmd!
+
+	" start Nerdtree if vim doesn't open a file
+	autocmd StdinReadPre * let s:std_in=1
+	autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+	" start Nerdtree if vim opens a directory
+	autocmd StdinReadPre * let s:std_in=1
+	autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | wincmd p | endif
+
+	" close vim if only Nerdtree is left
+	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+augroup END
 " End of setting of plugin NERDTree
 """"""""""""""""""""""""""""""""""""""
 
@@ -305,7 +321,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_complete_in_comments = 1
 
 augroup ycm_keymapping
-    autocmd!
+	autocmd!
 
 	" Enable mapping for the supported files.
 
