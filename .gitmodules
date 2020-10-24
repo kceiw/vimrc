@@ -31,9 +31,6 @@
 [submodule "bundle/local-vimrc"]
 	path = bundle/local-vimrc
 	url = https://github.com/MarcWeber/vim-addon-local-vimrc.git
-[submodule "bundle/vimproc.vim"]
-	path = bundle/vimproc.vim
-	url = https://github.com/Shougo/vimproc.vim.git
 [submodule "bundle/vim-nuuid"]
 	path = bundle/vim-nuuid
 	url = https://github.com/kburdett/vim-nuuid.git
