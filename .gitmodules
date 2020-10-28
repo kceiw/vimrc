@@ -76,3 +76,6 @@
 [submodule "bundle/vim-stardict"]
 	path = bundle/vim-stardict
 	url = https://github.com/phongvcao/vim-stardict.git
+[submodule "bundle/vimspector"]
+	path = bundle/vimspector
+	url = https://github.com/puremourning/vimspector.git

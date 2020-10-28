@@ -320,7 +320,6 @@ augroup END
 " End of FZF
 """"""""""""""""""""""""""""""""""""""
 
-
 """"""""""""""""""""""""""""""""""""""
 " Begin of YouCompleteMe
 let g:ycm_filetype_whitelist = {
@@ -344,7 +343,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 
 " auto complete in comment in case it has code snippet
 let g:ycm_complete_in_comments = 1
-
+"
 augroup ycm_keymapping
 	autocmd!
 
@@ -375,6 +374,26 @@ augroup END
 " End of YouCompleteMe
 """"""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""
+" Begin of vimspector
+
+" the HUMAN mappings are
+" Key 	Function 	API
+" F5 	When debugging, continue. Otherwise start debugging. 	vimspector#Continue()
+" F3 	Stop debugging. 	vimspector#Stop()
+" F4 	Restart debugging with the same configuration. 	vimspector#Restart()
+" F6 	Pause debugee. 	vimspector#Pause()
+" F9 	Toggle line breakpoint on the current line. 	vimspector#ToggleBreakpoint()
+" <leader>F9 	Toggle conditional line breakpoint on the current line. 	vimspector#ToggleBreakpoint( { trigger expr, hit count expr } )
+" F8 	Add a function breakpoint for the expression under cursor 	vimspector#AddFunctionBreakpoint( '<cexpr>' )
+" <leader>F8 	Run to Cursor 	vimspector#RunToCursor()
+" F10 	Step Over 	vimspector#StepOver()
+" F11 	Step Into 	vimspector#StepInto()
+" F12 	Step out of current function scope 	vimspector#StepOut()
+let g:vimspector_enable_mappings = 'HUMAN'
+
+" End of vimspector
+""""""""""""""""""""""""""""""""""""""
 
 " Put these lines at the very end of your vimrc file.
 
