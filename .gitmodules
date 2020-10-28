@@ -79,3 +79,6 @@
 [submodule "bundle/vimspector"]
 	path = bundle/vimspector
 	url = https://github.com/puremourning/vimspector.git
+[submodule "bundle/csv"]
+	path = bundle/csv
+	url = https://github.com/chrisbra/csv.vim.git
