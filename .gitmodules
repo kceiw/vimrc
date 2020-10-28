@@ -88,3 +88,6 @@
 [submodule "bundle/i3config"]
 	path = bundle/i3config
 	url = https://github.com/mboughaba/i3config.vim.git
+[submodule "bundle/vim-log-highlighting"]
+	path = bundle/vim-log-highlighting
+	url = https://github.com/mtdl9/vim-log-highlighting
