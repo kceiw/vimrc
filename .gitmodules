@@ -97,3 +97,6 @@
 [submodule "bundle/cpp-modern"]
 	path = bundle/cpp-modern
 	url = https://github.com/bfrg/vim-cpp-modern.git
+[submodule "bundle/markdown"]
+	path = bundle/markdown
+	url = https://github.com/plasticboy/vim-markdown.git
