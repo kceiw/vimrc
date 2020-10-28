@@ -85,3 +85,6 @@
 [submodule "bundle/dockerfile"]
 	path = bundle/dockerfile
 	url = https://github.com/ekalinin/Dockerfile.vim.git
+[submodule "bundle/i3config"]
+	path = bundle/i3config
+	url = https://github.com/mboughaba/i3config.vim.git
