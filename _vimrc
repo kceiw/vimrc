@@ -289,10 +289,35 @@ let g:strip_only_modified_lines=0
 
 """"""""""""""""""""""""""""""""""""""
 " Begin of ack
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
 " End of ack
+""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""
+" Begin of FZF
+
+" Have Ag and Rg take options.
+" https://github.com/junegunn/fzf.vim/issues/92
+function! s:ag_with_opts(arg, bang)
+	let tokens  = split(a:arg)
+	let ag_opts = join(filter(copy(tokens), 'v:val =~ "^-"'))
+	let query   = join(filter(copy(tokens), 'v:val !~ "^-"'))
+	call fzf#vim#ag(query, ag_opts, a:bang ? {} : {'down': '40%'})
+endfunction
+
+function! s:rg_with_opts(arg, bang)
+	let tokens  = split(a:arg)
+	let ag_opts = join(filter(copy(tokens), 'v:val =~ "^-"'))
+	let query   = join(filter(copy(tokens), 'v:val !~ "^-"'))
+	call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".ag_opts.query, 1)
+endfunction
+
+augroup fzf_group
+	autocmd!
+	autocmd VimEnter * command! -nargs=* -bang Ag call s:ag_with_opts(<q-args>, <bang>0)
+	autocmd VimEnter * command! -nargs=* -bang Rg call s:rg_with_opts(<q-args>, <bang>0)
+augroup END
+
+" End of FZF
 """"""""""""""""""""""""""""""""""""""
 
 
