@@ -153,7 +153,7 @@ endif " has("autocmd")
 " set the map leader
 " default is /
 let mapleader = ","
-let g:mapleader = ","
+let maplocaleader = ","
 
 " vertically split the window and move to the new one
 nnoremap <leader>w <C-w>v<C-w>l
@@ -332,6 +332,9 @@ let g:ycm_filetype_whitelist = {
 " auto trigger ycm. This also enable signature help
 let g:ycm_auto_trigger = 1
 
+" echo the current diagnostic when you move the cursor to the line.
+let g:ycm_echo_current_diagnostic = 1
+
 " Set the error symbol
 let g:ycm_error_symbol = 'EE'
 
@@ -349,24 +352,18 @@ augroup ycm_keymapping
 
 	" Enable mapping for the supported files.
 
-	for t in ["c", "cpp", "cs", "javascript", "python", "typescript"]
-		autocmd FileType t nnoremap <buffer> <Leader>gd :YcmCompleter Goto<CR>
-		autocmd FileType t nnoremap <buffer> <Leader>gim :YcmCompleter GotoImplementation<CR>
-		autocmd FileType t nnoremap <buffer> <Leader>gin :YcmCompleter GotoInclude<CR>
-		autocmd FileType t nnoremap <buffer> <Leader>gp :YcmCompleter GetParent<CR>
-		autocmd FileType t nnoremap <buffer> <Leader>gr :YcmCompleter GoToReferences<CR>
-		autocmd FileType t nnoremap <buffer> <Leader>gs :YcmCompleter GoToSymbol
-		autocmd FileType t nnoremap <buffer> <Leader>gt :YcmCompleter GetType<CR>
+    autocmd FileType c,cpp,cs,javascript,python,typescript nnoremap <Leader>yd :YcmCompleter Goto<CR>
+    autocmd FileType javascript,typescript nnoremap <Leader>yim :YcmCompleter GotoImplementation<CR>
+	autocmd FileType cs nnoremap <Leader>yim :YcmCompleter GoToImplementationElseDeclaration<CR>
+    autocmd FileType c,cpp nnoremap <Leader>yin :YcmCompleter GotoInclude<CR>
+    autocmd FileType c,cpp nnoremap <Leader>yp :YcmCompleter GetParent<CR>
+    autocmd FileType c,cpp,cs,javascript,python,typescript nnoremap <Leader>yr :YcmCompleter GoToReferences<CR>
+    autocmd FileType c,cpp,cs,javascript,python,typescript nnoremap <Leader>yt :YcmCompleter GetType<CR>
 
-		autocmd FileType t nnoremap <buffer> <Leader>rr :YcmCompleter RefactorRename
+    autocmd FileType c,cpp,javascript,typescript nnoremap <Leader>yx :YcmCompleter FixIt<CR>
+    autocmd FileType c,cpp,cs,javascript,python,typescript nnoremap <Leader>yc :YcmCompleter GetDoc<CR>
 
-		autocmd FileType t nnoremap <buffer> <Leader>fx :YcmCompleter FixIt<CR>
-		autocmd FileType t nnoremap <buffer> <Leader>dc :YcmCompleter GetDoc<CR>
-
-		autocmd FileType t nnoremap <buffer> <Leader>cf :YcmCompleter Format<CR>
-	endfor
-
-	autocmd FileType cs nnoremap <buffer> <Leader>gim :YcmCompleter GoToImplementationElseDeclaration<CR>
+    autocmd FileType c,cpp,javascript,typescript nnoremap <Leader>yf :YcmCompleter Format<CR>
 
 
 augroup END
