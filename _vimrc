@@ -352,7 +352,7 @@ augroup ycm_keymapping
 
 	" Enable mapping for the supported files.
 
-    autocmd FileType c,cpp,cs,javascript,python,typescript nnoremap <Leader>yd :YcmCompleter Goto<CR>
+    autocmd FileType c,cpp,cs,javascript,python,typescript nnoremap <Leader>yd :YcmCompleter GoTo<CR>
     autocmd FileType javascript,typescript nnoremap <Leader>yim :YcmCompleter GotoImplementation<CR>
 	autocmd FileType cs nnoremap <Leader>yim :YcmCompleter GoToImplementationElseDeclaration<CR>
     autocmd FileType c,cpp nnoremap <Leader>yin :YcmCompleter GotoInclude<CR>
