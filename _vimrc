@@ -87,8 +87,9 @@ set formatoptions=tcrqnocw
 " whether fold or not
 set foldenable
 set foldmethod=syntax
-set foldcolumn=0
-set foldlevelstart=10
+set foldcolumn=1
+set foldlevelstart=5
+set foldnestmax=5
 
 " wrap and the length of a line
 set wrap
@@ -195,6 +196,11 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 nnoremap <leader>u :GundoToggle<CR>
+
+" remap n and N to search the next and then move the line to the middle of the
+" screen
+nnoremap n nzz
+nnoremap N Nzz
 
 """"""""""""""""""""""""""""""""""""""
 " Begin of setting of plugin fugutive
@@ -390,6 +396,14 @@ augroup END
 let g:vimspector_enable_mappings = 'HUMAN'
 
 " End of vimspector
+""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""
+" Begin of twitvim
+
+let twitvim_enable_python3 = 1"
+
+" End of twitvim
 """"""""""""""""""""""""""""""""""""""
 
 " Put these lines at the very end of your vimrc file.
