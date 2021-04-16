@@ -103,3 +103,9 @@
 [submodule "bundle/twitvim"]
 	path = bundle/twitvim
 	url = https://github.com/twitvim/twitvim.git
+[submodule "bundle/pear-tree"]
+	path = bundle/pear-tree
+	url = https://github.com/tmsvg/pear-tree.git
+[submodule "bundle/matchup"]
+	path = bundle/matchup
+	url = https://github.com/andymass/vim-matchup.git
