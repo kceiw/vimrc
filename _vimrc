@@ -406,6 +406,13 @@ let twitvim_enable_python3 = 1"
 
 " End of twitvim
 """"""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""
+" Begin of OrgMode
+
+let g:org_todo_keywords=['TODO', 'NEXT', 'WAITING', 'STARTED', '|', 'DONE', 'CANCELED', 'DEFERRED']
+
+" End of OrgMode
+""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""
 " Begin of Tagbar
