@@ -88,7 +88,7 @@ set formatoptions=tcrqnocw
 set foldenable
 set foldmethod=syntax
 set foldcolumn=1
-set foldlevelstart=5
+set foldlevelstart=4
 set foldnestmax=5
 
 " wrap and the length of a line
