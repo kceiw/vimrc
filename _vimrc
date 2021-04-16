@@ -417,11 +417,8 @@ let g:org_todo_keywords=['TODO', 'NEXT', 'WAITING', 'STARTED', '|', 'DONE', 'CAN
 """"""""""""""""""""""""""""""""""""""
 " Begin of Tagbar
 
-au FileType org,c,cpp,cs,javascript,python,typescript call OpenTagbar()
-
-functioin! OpenTagbar()
-	:call tagbar#autoopen(0)
-endfunction
+autocmd FileType org,c,cpp,cs,html,javascript,python,typescript nested :call tagbar#autoopen(0)
+autocmd BufEnter org,c,cpp,cs,html,javascript,python,typescript nested :call tagbar#autoopen(0)
 
 " End of Tagbar
 """"""""""""""""""""""""""""""""""""""
