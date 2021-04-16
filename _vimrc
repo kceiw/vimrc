@@ -142,6 +142,7 @@ if has("autocmd")
   au BufEnter,BufRead,BufNewFile *.targets setlocal ft=xml tabstop=2 shiftwidth=2 expandtab
   au BufEnter,BufRead,BufNewFile *.xaml setlocal ft=xml
   au BufEnter,BufRead,BufNewFile *.yaml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+  au BufEnter,BufRead,BufNewFile *.org setlocal ft=org
 
   autocmd QuickFixCmdPost *grep* cwindow
 
@@ -404,6 +405,18 @@ let g:vimspector_enable_mappings = 'HUMAN'
 let twitvim_enable_python3 = 1"
 
 " End of twitvim
+""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""
+" Begin of Tagbar
+
+au FileType org,c,cpp,cs,javascript,python,typescript call OpenTagbar()
+
+functioin! OpenTagbar()
+	:call tagbar#autoopen(0)
+endfunction
+
+" End of Tagbar
 """"""""""""""""""""""""""""""""""""""
 
 " Put these lines at the very end of your vimrc file.
