@@ -30,6 +30,7 @@ set fileformats=unix,dos
 set nobackup
 " highlight the line where the cursor is
 set cursorline
+highlight CursorLine cterm=none
 " instruct VIM not to always redraw, especially during macro
 set lazyredraw
 
