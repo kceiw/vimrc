@@ -1,120 +1,159 @@
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+	branch = master
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+	branch = master
 [submodule "bundle/vim-rename2"]
 	path = bundle/vim-rename2
 	url = https://github.com/ReekenX/vim-rename2.git
+	branch = master
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+	branch = master
 [submodule "bundle/html5"]
 	path = bundle/html5
 	url = https://github.com/othree/html5.vim.git
+	branch = master
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+	branch = master
 [submodule "bundle/yankring"]
 	path = bundle/yankring
 	url = https://github.com/vim-scripts/YankRing.vim.git
+	branch = master
 [submodule "bundle/vim-better-whitespace"]
 	path = bundle/vim-better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace.git
+	branch = master
 [submodule "bundle/scratch"]
 	path = bundle/scratch
 	url = https://github.com/vim-scripts/scratch.vim.git
+	branch = master
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
+	branch = master
 [submodule "bundle/local-vimrc"]
 	path = bundle/local-vimrc
 	url = https://github.com/MarcWeber/vim-addon-local-vimrc.git
+	branch = master
 [submodule "bundle/vim-nuuid"]
 	path = bundle/vim-nuuid
 	url = https://github.com/kburdett/vim-nuuid.git
+	branch = master
 [submodule "bundle/ale"]
 	path = bundle/ale
 	url = https://github.com/w0rp/ale.git
+	branch = master
 [submodule "bundle/rainbow"]
 	path = bundle/rainbow
 	url = https://github.com/luochen1990/rainbow.git
+	branch = master
 [submodule "bundle/vim-easymotion"]
 	path = bundle/vim-easymotion
 	url = https://github.com/easymotion/vim-easymotion.git
+	branch = master
 [submodule "bundle/vim-peekaboo"]
 	path = bundle/vim-peekaboo
 	url = https://github.com/junegunn/vim-peekaboo.git
+	branch = master
 [submodule "bundle/fzf.vim"]
 	path = bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
+	branch = master
 [submodule "bundle/fzf"]
 	path = bundle/fzf
 	url = https://github.com/junegunn/fzf.git
+	branch = master
 [submodule "bundle/vim-orgmode"]
 	path = bundle/vim-orgmode
 	url = https://github.com/jceb/vim-orgmode.git
+	branch = master
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
+	branch = master
 [submodule "bundle/speeddating"]
 	path = bundle/speeddating
 	url = https://github.com/tpope/vim-speeddating.git
+	branch = master
 [submodule "bundle/calendar"]
 	path = bundle/calendar
 	url = https://github.com/mattn/calendar-vim.git
+	branch = master
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
+	branch = master
 [submodule "bundle/nerdtree-git-plugin"]
 	path = bundle/nerdtree-git-plugin
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+	branch = master
 [submodule "bundle/vim-stardict"]
 	path = bundle/vim-stardict
 	url = https://github.com/phongvcao/vim-stardict.git
+	branch = master
 [submodule "bundle/vimspector"]
 	path = bundle/vimspector
 	url = https://github.com/puremourning/vimspector.git
+	branch = master
 [submodule "bundle/csv"]
 	path = bundle/csv
 	url = https://github.com/chrisbra/csv.vim.git
+	branch = master
 [submodule "bundle/dockerfile"]
 	path = bundle/dockerfile
 	url = https://github.com/ekalinin/Dockerfile.vim.git
+	branch = master
 [submodule "bundle/i3config"]
 	path = bundle/i3config
 	url = https://github.com/mboughaba/i3config.vim.git
+	branch = master
 [submodule "bundle/vim-log-highlighting"]
 	path = bundle/vim-log-highlighting
 	url = https://github.com/mtdl9/vim-log-highlighting
+	branch = master
 [submodule "bundle/powershell"]
 	path = bundle/powershell
 	url = https://github.com/PProvost/vim-ps1.git
+	branch = master
 [submodule "bundle/cpp-modern"]
 	path = bundle/cpp-modern
 	url = https://github.com/bfrg/vim-cpp-modern.git
+	branch = master
 [submodule "bundle/markdown"]
 	path = bundle/markdown
 	url = https://github.com/plasticboy/vim-markdown.git
+	branch = master
 [submodule "bundle/twitvim"]
 	path = bundle/twitvim
 	url = https://github.com/twitvim/twitvim.git
+	branch = master
 [submodule "bundle/pear-tree"]
 	path = bundle/pear-tree
 	url = https://github.com/tmsvg/pear-tree.git
+	branch = master
 [submodule "bundle/matchup"]
 	path = bundle/matchup
 	url = https://github.com/andymass/vim-matchup.git
+	branch = master
 [submodule "bundle/utl"]
 	path = bundle/utl
 	url = https://github.com/vim-scripts/utl.vim.git
+	branch = master
 [submodule "bundle/SyntaxRange"]
 	path = bundle/SyntaxRange
 	url = https://github.com/vim-scripts/SyntaxRange.git
+	branch = master
 [submodule "bundle/NrrwRgn"]
 	path = bundle/NrrwRgn
 	url = https://github.com/chrisbra/NrrwRgn.git
+	branch = master
 [submodule "bundle/omnisharp"]
 	path = bundle/omnisharp
 	url = https://github.com/OmniSharp/omnisharp-vim.git
