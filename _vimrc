@@ -242,7 +242,8 @@ let g:ale_sign_error = 'LE'
 let g:ale_sign_warning = 'LW'
 
 let g:ale_linters = {
-			\ 'py': ['pylint', 'flake8']
+			\ 'py': ['pylint', 'flake8'],
+			\ 'cs': ['OmniSharp']
 			\}
 
 " End of setting of ALE
@@ -327,6 +328,57 @@ augroup END
 
 " End of FZF
 """"""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""
+" Begin of OmniSharp
+
+
+" Force to use stdio
+let g:OmniSharp_server_stdio = 1
+
+" Enable snippet completion, using the ultisnips plugin
+let g:OmniSharp_want_snippet=1"
+
+augroup omnisharp_commands
+	autocmd!
+
+	" The following commands are contextual, based on the cursor position.
+	autocmd FileType cs nmap <silent> <buffer> gd <Plug>(omnisharp_go_to_definition)
+	autocmd FileType cs nmap <silent> <buffer> <Leader>gfu <Plug>(omnisharp_find_usages)
+	autocmd FileType cs nmap <silent> <buffer> <Leader>gfi <Plug>(omnisharp_find_implementations)
+	autocmd FileType cs nmap <silent> <buffer> <Leader>gpd <Plug>(omnisharp_preview_definition)
+	autocmd FileType cs nmap <silent> <buffer> <Leader>gpi <Plug>(omnisharp_preview_implementations)
+	autocmd FileType cs nmap <silent> <buffer> <Leader>gt <Plug>(omnisharp_type_lookup)
+	autocmd FileType cs nmap <silent> <buffer> <Leader>gc <Plug>(omnisharp_documentation)
+	autocmd FileType cs nmap <silent> <buffer> <Leader>gfs <Plug>(omnisharp_find_symbol)
+	autocmd FileType cs nmap <silent> <buffer> <Leader>gfx <Plug>(omnisharp_fix_usings)
+	autocmd FileType cs nmap <silent> <buffer> <Leader>gsh <Plug>(omnisharp_signature_help)
+	autocmd FileType cs imap <silent> <buffer> <Leader>gsh <Plug>(omnisharp_signature_help)
+
+	" Navigate up and down by method/property/field
+	autocmd FileType cs nmap <silent> <buffer> [[ <Plug>(omnisharp_navigate_up)
+	autocmd FileType cs nmap <silent> <buffer> ]] <Plug>(omnisharp_navigate_down)
+
+	" Find all code errors/warnings for the current solution and populate the quickfix window
+	autocmd FileType cs nmap <silent> <buffer> <Leader>ggc <Plug>(omnisharp_global_code_check)
+
+	" Contextual code actions (uses fzf, vim-clap, CtrlP or unite.vim selector when available)
+	autocmd FileType cs nmap <silent> <buffer> <Leader>gca <Plug>(omnisharp_code_actions)
+	autocmd FileType cs xmap <silent> <buffer> <Leader>gca <Plug>(omnisharp_code_actions)
+
+	" Repeat the last code action performed (does not use a selector)
+	autocmd FileType cs nmap <silent> <buffer> <Leader>g. <Plug>(omnisharp_code_action_repeat)
+	autocmd FileType cs xmap <silent> <buffer> <Leader>g. <Plug>(omnisharp_code_action_repeat)
+
+	autocmd FileType cs nmap <silent> <buffer> <Leader>gcf <Plug>(omnisharp_code_format)
+
+	autocmd FileType cs nmap <silent> <buffer> <Leader>grn <Plug>(omnisharp_rename)
+
+	autocmd FileType cs nmap <silent> <buffer> <Leader>osre <Plug>(omnisharp_restart_server)
+	autocmd FileType cs nmap <silent> <buffer> <Leader>osst <Plug>(omnisharp_start_server)
+	autocmd FileType cs nmap <silent> <buffer> <Leader>ossp <Plug>(omnisharp_stop_server)
+
+augroup END
 
 """"""""""""""""""""""""""""""""""""""
 " Begin of vimspector

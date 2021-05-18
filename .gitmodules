@@ -115,3 +115,7 @@
 [submodule "bundle/NrrwRgn"]
 	path = bundle/NrrwRgn
 	url = https://github.com/chrisbra/NrrwRgn.git
+[submodule "bundle/omnisharp"]
+	path = bundle/omnisharp
+	url = https://github.com/OmniSharp/omnisharp-vim.git
+	branch = master
