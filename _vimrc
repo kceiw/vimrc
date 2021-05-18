@@ -329,57 +329,6 @@ augroup END
 """"""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""
-" Begin of YouCompleteMe
-let g:ycm_filetype_whitelist = {
-        \ 'python': 1,
-        \ 'cs': 1,
-        \ 'javascript': 1,
-        \ 'typescript': 1
-        \ }
-
-" auto trigger ycm. This also enable signature help
-let g:ycm_auto_trigger = 1
-
-" echo the current diagnostic when you move the cursor to the line.
-let g:ycm_echo_current_diagnostic = 1
-
-" Set the error symbol
-let g:ycm_error_symbol = 'EE'
-
-" Set the warning symbol
-let g:ycm_warning_symbol = 'WW'
-
-" auto close the preview window
-let g:ycm_autoclose_preview_window_after_completion = 1
-
-" auto complete in comment in case it has code snippet
-let g:ycm_complete_in_comments = 1
-"
-augroup ycm_keymapping
-	autocmd!
-
-	" Enable mapping for the supported files.
-
-    autocmd FileType c,cpp,cs,javascript,python,typescript nnoremap <Leader>yd :YcmCompleter GoTo<CR>
-    autocmd FileType javascript,typescript nnoremap <Leader>yim :YcmCompleter GotoImplementation<CR>
-	autocmd FileType cs nnoremap <Leader>yim :YcmCompleter GoToImplementationElseDeclaration<CR>
-    autocmd FileType c,cpp nnoremap <Leader>yin :YcmCompleter GotoInclude<CR>
-    autocmd FileType c,cpp nnoremap <Leader>yp :YcmCompleter GetParent<CR>
-    autocmd FileType c,cpp,cs,javascript,python,typescript nnoremap <Leader>yr :YcmCompleter GoToReferences<CR>
-    autocmd FileType c,cpp,cs,javascript,python,typescript nnoremap <Leader>yt :YcmCompleter GetType<CR>
-
-    autocmd FileType c,cpp,javascript,typescript nnoremap <Leader>yx :YcmCompleter FixIt<CR>
-    autocmd FileType c,cpp,cs,javascript,python,typescript nnoremap <Leader>yc :YcmCompleter GetDoc<CR>
-
-    autocmd FileType c,cpp,javascript,typescript nnoremap <Leader>yf :YcmCompleter Format<CR>
-
-
-augroup END
-
-" End of YouCompleteMe
-""""""""""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""""""""""
 " Begin of vimspector
 
 " the HUMAN mappings are
