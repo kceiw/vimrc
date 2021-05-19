@@ -162,3 +162,7 @@
 	path = bundle/asyncomplete
 	url = https://github.com/prabirshrestha/asyncomplete.vim.git
 	branch = master
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+	branch = master
