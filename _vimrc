@@ -263,8 +263,8 @@ augroup nerdtree_auto
 	autocmd!
 
 	" start Nerdtree if vim doesn't open a file
-	autocmd StdinReadPre * let s:std_in=1
-	autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+	" autocmd StdinReadPre * let s:std_in=1
+	" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 	" start Nerdtree if vim opens a directory
 	autocmd StdinReadPre * let s:std_in=1
