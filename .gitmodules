@@ -130,10 +130,6 @@
 	path = bundle/markdown
 	url = https://github.com/plasticboy/vim-markdown.git
 	branch = master
-[submodule "bundle/twitvim"]
-	path = bundle/twitvim
-	url = https://github.com/twitvim/twitvim.git
-	branch = master
 [submodule "bundle/pear-tree"]
 	path = bundle/pear-tree
 	url = https://github.com/tmsvg/pear-tree.git
