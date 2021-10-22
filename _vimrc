@@ -204,6 +204,11 @@ nnoremap <leader>u :GundoToggle<CR>
 nnoremap n nzz
 nnoremap N Nzz
 
+" settings for terminal
+
+" Open the terminal to the right
+nnoremap vterm :vertical botright term ++kill=term<CR>
+
 """"""""""""""""""""""""""""""""""""""
 " Begin of setting of plugin fugutive
 
