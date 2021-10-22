@@ -425,6 +425,14 @@ autocmd BufEnter org,c,cpp,cs,html,javascript,python,typescript nested :call tag
 " End of Tagbar
 """"""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""
+
+" The popup seems to react slow and it interferes with the typing. So disable
+" auto pop up. I can always use TAB to show the pop up.
+let g:asyncomplete_auto_popup = 0
+
+""""""""""""""""""""""""""""""""""""""
+
 " Put these lines at the very end of your vimrc file.
 
 " Load all plugins now.
