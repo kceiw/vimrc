@@ -433,8 +433,9 @@ autocmd BufEnter org,c,cpp,cs,html,javascript,python,typescript nested :call tag
 """"""""""""""""""""""""""""""""""""""
 
 " The popup seems to react slow and it interferes with the typing. So disable
-" auto pop up. I can always use TAB to show the pop up.
+" auto pop up. Map Ctrl-o to open the menu.
 let g:asyncomplete_auto_popup = 0
+imap <C-o> <Plug>(asyncomplete_force_refresh)
 
 """"""""""""""""""""""""""""""""""""""
 
