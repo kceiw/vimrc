@@ -207,7 +207,8 @@ nnoremap N Nzz
 " settings for terminal
 
 " Open the terminal to the right
-nnoremap vterm :vertical botright term ++kill=term<CR>
+nnoremap vterm :set termwinsize=0x0<CR>:vertical botright term ++kill=term<CR>
+nnoremap hterm :set termwinsize=10x0<CR>:botright term ++kill=term<CR>
 
 """"""""""""""""""""""""""""""""""""""
 " Begin of setting of plugin fugutive
