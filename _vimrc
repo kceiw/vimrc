@@ -278,6 +278,10 @@ augroup nerdtree_auto
 
 	" close vim if only Nerdtree is left
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+	" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+	autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+				\ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 augroup END
 " End of setting of plugin NERDTree
 """"""""""""""""""""""""""""""""""""""
