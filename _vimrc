@@ -24,6 +24,11 @@ set incsearch           " do incremental searching
 set number
 set relativenumber
 
+" Set the directory for the swap files. An extra / at the end asks vim to use
+" the absolute file path as the file name. This is to avoid name collision.
+" The directory must be created first.
+set directory=~/tmp//
+
 set enc=utf-8
 set fileencodings=utf-8,gb18030,utf-16,big5
 set fileformats=unix,dos
