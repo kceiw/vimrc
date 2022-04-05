@@ -202,7 +202,7 @@ nnoremap <leader><space> :noh<cr>
 " strip trailing spaces
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
-nnoremap <leader>u :GundoToggle<CR>
+nnoremap <leader>ud :GundoToggle<CR>
 
 " remap n and N to search the next and then move the line to the middle of the
 " screen
@@ -442,12 +442,20 @@ autocmd BufEnter org,c,cpp,cs,html,javascript,python,typescript nested :call tag
 
 """"""""""""""""""""""""""""""""""""""
 
+" Begin of asyncomplete
 " The popup seems to react slow and it interferes with the typing. So disable
 " auto pop up. Map Ctrl-o to open the menu.
 let g:asyncomplete_auto_popup = 0
 imap <C-o> <Plug>(asyncomplete_force_refresh)
 
 """"""""""""""""""""""""""""""""""""""
+" End of asyncomplete
+
+" Begin of Gundo
+""""""""""""""""""""""""""""""""""""""
+let g:gundo_prefer_python3 = 1
+""""""""""""""""""""""""""""""""""""""
+" End of Gundo
 
 " Put these lines at the very end of your vimrc file.
 
