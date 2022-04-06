@@ -150,15 +150,13 @@
 	path = bundle/NrrwRgn
 	url = https://github.com/chrisbra/NrrwRgn.git
 	branch = master
-[submodule "bundle/omnisharp"]
-	path = bundle/omnisharp
-	url = https://github.com/OmniSharp/omnisharp-vim.git
-	branch = master
-[submodule "bundle/asyncomplete"]
-	path = bundle/asyncomplete
-	url = https://github.com/prabirshrestha/asyncomplete.vim.git
-	branch = master
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
 	branch = master
+[submodule "bundle/LanguageClient"]
+	path = bundle/LanguageClient
+	url = https://github.com/autozimu/LanguageClient-neovim.git
+[submodule "bundle/mucomplete"]
+	path = bundle/mucomplete
+	url = https://github.com/lifepillar/vim-mucomplete.git

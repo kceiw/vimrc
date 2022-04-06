@@ -346,57 +346,6 @@ augroup END
 """"""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""
-" Begin of OmniSharp
-
-
-" Force to use stdio
-let g:OmniSharp_server_stdio = 1
-
-" Enable snippet completion, using the ultisnips plugin
-let g:OmniSharp_want_snippet=1"
-
-augroup omnisharp_commands
-	autocmd!
-
-	" The following commands are contextual, based on the cursor position.
-	autocmd FileType cs nmap <silent> <buffer> gd <Plug>(omnisharp_go_to_definition)
-	autocmd FileType cs nmap <silent> <buffer> <Leader>gfu <Plug>(omnisharp_find_usages)
-	autocmd FileType cs nmap <silent> <buffer> <Leader>gfi <Plug>(omnisharp_find_implementations)
-	autocmd FileType cs nmap <silent> <buffer> <Leader>gpd <Plug>(omnisharp_preview_definition)
-	autocmd FileType cs nmap <silent> <buffer> <Leader>gpi <Plug>(omnisharp_preview_implementations)
-	autocmd FileType cs nmap <silent> <buffer> <Leader>gt <Plug>(omnisharp_type_lookup)
-	autocmd FileType cs nmap <silent> <buffer> <Leader>gc <Plug>(omnisharp_documentation)
-	autocmd FileType cs nmap <silent> <buffer> <Leader>gfs <Plug>(omnisharp_find_symbol)
-	autocmd FileType cs nmap <silent> <buffer> <Leader>gfx <Plug>(omnisharp_fix_usings)
-	autocmd FileType cs nmap <silent> <buffer> <Leader>gsh <Plug>(omnisharp_signature_help)
-	autocmd FileType cs imap <silent> <buffer> <Leader>gsh <Plug>(omnisharp_signature_help)
-
-	" Navigate up and down by method/property/field
-	autocmd FileType cs nmap <silent> <buffer> [[ <Plug>(omnisharp_navigate_up)
-	autocmd FileType cs nmap <silent> <buffer> ]] <Plug>(omnisharp_navigate_down)
-
-	" Find all code errors/warnings for the current solution and populate the quickfix window
-	autocmd FileType cs nmap <silent> <buffer> <Leader>ggc <Plug>(omnisharp_global_code_check)
-
-	" Contextual code actions (uses fzf, vim-clap, CtrlP or unite.vim selector when available)
-	autocmd FileType cs nmap <silent> <buffer> <Leader>gca <Plug>(omnisharp_code_actions)
-	autocmd FileType cs xmap <silent> <buffer> <Leader>gca <Plug>(omnisharp_code_actions)
-
-	" Repeat the last code action performed (does not use a selector)
-	autocmd FileType cs nmap <silent> <buffer> <Leader>g. <Plug>(omnisharp_code_action_repeat)
-	autocmd FileType cs xmap <silent> <buffer> <Leader>g. <Plug>(omnisharp_code_action_repeat)
-
-	autocmd FileType cs nmap <silent> <buffer> <Leader>gcf <Plug>(omnisharp_code_format)
-
-	autocmd FileType cs nmap <silent> <buffer> <Leader>grn <Plug>(omnisharp_rename)
-
-	autocmd FileType cs nmap <silent> <buffer> <Leader>osre <Plug>(omnisharp_restart_server)
-	autocmd FileType cs nmap <silent> <buffer> <Leader>osst <Plug>(omnisharp_start_server)
-	autocmd FileType cs nmap <silent> <buffer> <Leader>ossp <Plug>(omnisharp_stop_server)
-
-augroup END
-
-""""""""""""""""""""""""""""""""""""""
 " Begin of vimspector
 
 " the HUMAN mappings are
@@ -442,20 +391,60 @@ autocmd BufEnter org,c,cpp,cs,html,javascript,python,typescript nested :call tag
 """"""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""
-" Begin of asyncomplete
+" Begin of mucomplete
 
-" The popup seems to react slow and it interferes with the typing. So disable
-" auto pop up. Map Ctrl-o to open the menu.
-let g:asyncomplete_auto_popup = 0
-imap <C-o> <Plug>(asyncomplete_force_refresh)
+set completeopt+=menuone,noinsert
+set complete=.,w,b,u,k
+let g:mucomplete#enable_auto_at_startup = 1
+" Only start completion when pause typing
+let g:mucomplete#completion_delay = 0
 
-" End of asyncomplete
+let g:mucomplete#chains = {}
+let g:mucomplete#chains.default = ['omni', 'c-n', 'path', 'tags', 'dict']
+let s:cpp_cond = { t -> t =~# '\%(->\|::\|\.\)$' }
+let s:cs_cond = { t -> t =~# '\%(\.\)$' }
+let g:mucomplete#can_complete = {}
+let g:mucomplete#can_complete.cpp = { 'omni': s:cpp_cond }
+let g:mucomplete#can_complete.cs = { 'omni': s:cs_cond }
+
+" End of mucomplete
 """"""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""
 " Begin of Gundo
 let g:gundo_prefer_python3 = 1
 " End of Gundo
+""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""
+" Begin of LanguageClient
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['pylsp'],
+    \ 'cs': ['omnisharp', '-lsp'],
+    \ }
+
+" note that if you are using Plug mapping you should not use `noremap` mappings.
+function SetLSPShortcuts()
+    nnoremap <leader>gd :call LanguageClient#textDocument_definition()<CR>
+    nnoremap <leader>gr :call LanguageClient#textDocument_rename()<CR>
+    nnoremap <leader>gf :call LanguageClient#textDocument_formatting()<CR>
+    nnoremap <leader>gt :call LanguageClient#textDocument_typeDefinition()<CR>
+    nnoremap <leader>gx :call LanguageClient#textDocument_references()<CR>
+    nnoremap <leader>ga :call LanguageClient_workspace_applyEdit()<CR>
+    nnoremap <leader>gc :call LanguageClient#textDocument_completion()<CR>
+    nnoremap <leader>gh :call LanguageClient#textDocument_hover()<CR>
+    nnoremap <leader>gs :call LanguageClient_textDocument_documentSymbol()<CR>
+    nnoremap <leader>gm :call LanguageClient_contextMenu()<CR>
+endfunction()
+
+augroup languageserver_commands
+	autocmd!
+    autocmd FileType cs,python call SetLSPShortcuts()
+augroup END
+" End of LanguageClient
 """"""""""""""""""""""""""""""""""""""
 
 " Put these lines at the very end of your vimrc file.
