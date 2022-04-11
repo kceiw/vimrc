@@ -202,7 +202,7 @@ nnoremap <leader><space> :noh<cr>
 " strip trailing spaces
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
-nnoremap <leader>ud :GundoToggle<CR>
+nnoremap <leader>ud :UndotreeToggle<CR>
 
 " remap n and N to search the next and then move the line to the middle of the
 " screen
@@ -411,9 +411,10 @@ let g:mucomplete#can_complete.cs = { 'omni': s:cs_cond }
 """"""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""
-" Begin of Gundo
-let g:gundo_prefer_python3 = 1
-" End of Gundo
+" Begin of undotree
+let g:undotree_WindowLayout = 2
+let g:undotree_DiffAutoOpen = 1
+" End of undotree
 """"""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""

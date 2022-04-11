@@ -25,9 +25,6 @@
 [submodule "bundle/scratch"]
 	path = bundle/scratch
 	url = https://github.com/vim-scripts/scratch.vim.git
-[submodule "bundle/gundo"]
-	path = bundle/gundo
-	url = https://github.com/sjl/gundo.vim.git
 [submodule "bundle/local-vimrc"]
 	path = bundle/local-vimrc
 	url = https://github.com/MarcWeber/vim-addon-local-vimrc.git
@@ -121,3 +118,6 @@
 [submodule "bundle/mucomplete"]
 	path = bundle/mucomplete
 	url = https://github.com/lifepillar/vim-mucomplete.git
+[submodule "bundle/undotree"]
+	path = bundle/undotree
+	url = https://github.com/mbbill/undotree.git
